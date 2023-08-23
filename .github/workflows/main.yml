@@ -12,9 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     
       - uses: actions/checkout@v3  
-
+     
       - name: "login to docker hub"
         run: docker login --username ${{ secrets.DOCKER_NAME }} --password ${{secrets.DOCKER_TOKEN }}
 
@@ -23,6 +22,7 @@ jobs:
 
       - name: "pushing to docker hub"  
         run: docker push ${{ secrets.DOCKER_NAME }}/myimage 
+
 
 
       
