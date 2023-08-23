@@ -14,13 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3  
      
-      - name: "login to docker hub"
+      - name: "Login to Docker hub"
         run: docker login --username ${{ secrets.DOCKER_NAME }} --password ${{secrets.DOCKER_TOKEN }}
 
       - name: "Bulding docker image"  
         run: docker build -t ${{ secrets.DOCKER_NAME }}/myimage .
 
-      - name: "pushing to docker hub"  
+      - name: "Pushing to Docker hub"  
         run: docker push ${{ secrets.DOCKER_NAME }}/myimage 
 
 
