@@ -1,7 +1,7 @@
 on:
   push:
-    branches:
-      - master
+      branches:
+          - master
 
 
 
@@ -9,22 +9,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3  
-     
-      - name: "Login to Docker hub"
-        run: docker login --username ${{ secrets.DOCKER_NAME }} --password ${{secrets.DOCKER_TOKEN }}
+      steps:
+          - uses: actions/checkout@v3
 
-      - name: "Bulding dockers image"  
-        run: docker build -t ${{ secrets.DOCKER_NAME }}/myimage .
-
-      - name: "Pushing to Docker hub"  
-        run: docker push ${{ secrets.DOCKER_NAME }}/myimage 
+          - name: "Login to Docker hub"
+            run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_TOKEN }}
 
 
+          - name: "Building docker image"
+            run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage .
 
-      
- 
-   
+          - name: "Pushing to Docker hub"
+            run: docker push ${{ secrets.DOCKER_USERNAME }}/myimage
+
+
