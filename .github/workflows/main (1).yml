@@ -21,7 +21,7 @@
             - name: "Building docker image"
               run: docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage .
 
-            - name: "Pushing to Docker hub"
+            - name: "Pushing to docker hub"
               run: docker push ${{ secrets.DOCKER_USERNAME }}/myimage
 
 
