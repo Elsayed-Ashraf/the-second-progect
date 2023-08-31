@@ -20,7 +20,7 @@ jobs:
       - name: 'testing github action'
         run: pwd
 
-      - name: 'testing printing'
+      - name: 'testing pprinting'
         run: echo sayed
 
       - uses: actions/checkout@v3 
