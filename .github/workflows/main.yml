@@ -34,7 +34,7 @@ jobs:
         run: docker build -t ${{ secretsDDOCKER }}/image .
 
       - name: "pushing to Docker hub"
-        run: docker push  ${{ secrets.DDOCKER}}/image  
+        run: docker push  ${{ secrets.DDOCKER }}/image  
 
 
 
