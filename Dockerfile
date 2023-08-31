@@ -4,6 +4,6 @@ WORKDIR /application
 
 COPY Ahmed.java .
 
-RUN javac Ahmed.java
+RUN /bin/sh -c javac Ahmed.java
 
 CMD java Ahmed
