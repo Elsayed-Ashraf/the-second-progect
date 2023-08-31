@@ -2,8 +2,8 @@ FROM openjdk
 
 WORKDIR /application
 
-COPY Ahmed.java .
+COPY ahmed.java .
 
-RUN javac Ahmed.java
+RUN javac ahmed.java
 
-CMD java Ahmed
+CMD java ahmed
