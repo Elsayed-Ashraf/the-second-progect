@@ -1,9 +1,5 @@
 FROM openjdk
-
-WORKDIR /application
-
-COPY Ahmed.java .
-
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
 RUN javac Ahmed.java
-
-CMD java Ahmed
+CMD ["java", "Ahmed"]
